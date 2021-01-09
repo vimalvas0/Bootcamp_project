@@ -1,2 +1,1 @@
-#BOOTCAMP API
-Project for personal learnings : BOOTCAMP API
+Demo Project : Bootcamp API (Using Node.js/ Express)
