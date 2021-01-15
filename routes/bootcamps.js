@@ -1,5 +1,6 @@
 const express = require('express');
 const courseRouter = require('./courses');
+const reviewRouter = require('./reviews');
 
 const { protect, authorize } = require('../middlewares/auth');
 
@@ -26,6 +27,7 @@ const router = express.Router();
 // each of these methods take a middlewares which we take from controllers folder...
 
 router.use('/:bootcampId/courses', courseRouter);
+router.use('/:bootcampId/reviews', reviewRouter);
 
 router.route('/:id/photo').put(protect, bootcampPhotoUpload);
 

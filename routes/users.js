@@ -13,13 +13,9 @@ const {
 } = require('../controllers/users');
 
 const advancedResults = require('../middlewares/advancedResults');
-const { protect, authorize } = require('../middlewares/auth');
 const router = express.Router({mergeParams : true});
 
-
-
 const User = require('../models/User');
-const router = require('./courses');
 
 
 router.use(protect);

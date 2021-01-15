@@ -10,6 +10,7 @@ const cookieParser = require('cookie-parser');
 const courses = require('./routes/courses');
 const auth = require('./routes/auth');
 const users = require('./routes/users');
+const reviews = require('./routes/reviews');
 
 // Error handling middleware
 const errorHandler = require('./middlewares/error');
@@ -65,6 +66,7 @@ app.use('/api/bootcamps', bootcamps);
 app.use('/api/courses', courses);
 app.use('/api/auth', auth);
 app.use('/api/users', users);
+app.use('/api/reviews', reviews); 
 app.use(errorHandler);
 
 
