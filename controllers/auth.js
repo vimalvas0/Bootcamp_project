@@ -201,6 +201,23 @@ exports.updateDetails = asyncHandler( async (req, res, next)=>{
 });
 
 
+
+// @description        logout
+// @routes             GET /api/auth/logout
+// @access             public (requires no token
+exports.logout = asyncHandler( async (req, res, next)=>{
+    res.cookie('token', 'none', {
+        expires : new Date(Date.now() + 10 * 1000),
+        httpOnly : true
+    });
+
+    res.status(200).json({
+        success : true,
+        data : {}
+    });
+});
+
+
 // @description        Update password for user
 // @routes             PUT /api/auth/updatePassword
 // @access             public (requires no token

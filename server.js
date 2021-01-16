@@ -11,6 +11,9 @@ const courses = require('./routes/courses');
 const auth = require('./routes/auth');
 const users = require('./routes/users');
 const reviews = require('./routes/reviews');
+const mongoSanitize = require('express-mongo-sanitize');
+const helmet = require('helmet');
+const xssclean = require('xss-clean');
 
 // Error handling middleware
 const errorHandler = require('./middlewares/error');
@@ -57,6 +60,16 @@ app.use(cookieParser());
 
 // Here, fileupload to upload a image
 app.use(fileupload());
+
+
+// To Sanitize the data
+app.use(mongoSanitize());
+
+// Set security headers
+app.use(helmet());
+
+//xss-clean
+app.use(xssclean());
 
 // Set up the static foler
 app.use(express.static(path.join(__dirname, 'public')));

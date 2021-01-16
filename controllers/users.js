@@ -67,7 +67,6 @@ exports.updateById =  asyncHandler(async (req, res, next) => {
 // @access             Private (requires no token)
 exports.deleteUser =  asyncHandler(async (req, res, next) => {
     
-    
     const user = await User.findByIdAndDelete(req.params.id);
 
     res.status(200).json({
